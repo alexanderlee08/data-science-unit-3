@@ -1,4 +1,4 @@
-
+Most of this code is copied from the exercise.  I only change the line for the mesh to be more refined.
 
 ```python
 import numpy as np
@@ -83,6 +83,7 @@ print(neighbors.predict_proba([[24, 190]]))
     [[0.4 0.6]]
 
 
+My notebook is pretty fast, so at .1 it takes only a few seconds.
 
 ```python
 # Our data. Converting from data frames to arrays for the mesh.
