@@ -125,3 +125,4 @@ plt.show()
 
 ![png](output_4_0.png)
 
+Obviously the more refined the mesh the higher the resolution the nearest neighbor algorithm will generate.
