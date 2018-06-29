@@ -126,3 +126,29 @@ plt.show()
 ![png](output_4_0.png)
 
 Obviously the more refined the mesh the higher the resolution the nearest neighbor algorithm will generate.
+
+# Custom Classifier
+
+```python
+X = music[['duration', 'loudness']]
+Y = music.jazz
+
+def test2(x, y, k, predict):
+    distributions = []
+    for i, row in x.iterrows():
+        distributions.append([np.linalg.norm(predict- row), y[i]])
+    #Gather jazz classifications in the order of distribution distance
+    results = [i[1] for i in sorted(distributions)]
+    #see coordinates to predict against entire dataset in order.
+    print(results)
+    #pick the closest neighbors to weigh based on k.
+    result = results[0:k]
+    print(result)
+    
+ test2(X, Y, 5, [24, 190])
+```
+[0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1]
+[0, 0, 0, 1, 1]
+
+The results are 3 not jazz and 2 jazz, which is the opposite of the exercise results.  I am not sure what I did wrong.
+
