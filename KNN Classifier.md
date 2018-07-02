@@ -130,7 +130,7 @@ Obviously the more refined the mesh the higher the resolution the nearest neighb
 # Custom Classifier
 
 ```python
-X = music[['duration', 'loudness']]
+X = music[['loudness', 'duration']]
 Y = music.jazz
 
 def test2(x, y, k, predict):
